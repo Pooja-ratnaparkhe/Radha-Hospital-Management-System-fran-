@@ -14,7 +14,7 @@ export class DocdashComponent {
 
   constructor(private patientService:PatientService,private router:Router){}
   patients:Patient[]=[];
-
+//ng Oninit
 
 ngOnInit():void{
   this.getpatients();
@@ -32,6 +32,12 @@ ngOnInit():void{
 
     this.router.navigate(['update-patient',id])
 
+  }
+
+  //this is ts file
+
+  delete(){
+    
   }
 
 }
