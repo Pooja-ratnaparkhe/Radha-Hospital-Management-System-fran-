@@ -3,7 +3,7 @@ export class Appointment {
   id: number = 0;
   name: string = "";
   age: string = "";
-  symptoms: string = "";
+  symtomps: string = "";
   number: string = "";
 
 }

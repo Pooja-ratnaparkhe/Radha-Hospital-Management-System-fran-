@@ -10,25 +10,48 @@ import { MedicinelistComponent } from './medicinelist/medicinelist.component';
 import { CreateMedicineComponent } from './create-medicine/create-medicine.component';
 import { Patient } from './patient';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
+import { UpdateMedicineComponent } from './update-medicine/update-medicine.component';
+import { DocloginComponent } from './doclogin/doclogin.component';
+import { AdloginComponent } from './adlogin/adlogin.component';
+import { AdminauthguardService } from './adminauthguard.service';
+import { DoctorauthguardService } from './doctorauthguard.service';
 
 const routes: Routes = [
 
-  {path:'',component:AdmindComponent},
-  {path:'appointment',component:AppointmentComponent},
-  {path:'create-appointment',component:CreateAppointmentComponent},
+  {path:'admin',component:AdmindComponent,canActivate:[AdminauthguardService]},
+
+  {path:'appointment',component:AppointmentComponent,canActivate:[AdminauthguardService]},
+
+  {path:'create-appointment',component:CreateAppointmentComponent,canActivate:[AdminauthguardService]},
+
   {path:'home',component:HomeComponent},
+
   {path:'', redirectTo:'home',pathMatch:'full'},
-  {path:'docdash',component:DocdashComponent},
-  {path:'create-patient',component:CreatePatientComponent},
-  {path:'view-medicine',component:MedicinelistComponent},
-  {path:'create-medicine',component:CreateMedicineComponent},
-  { path: 'update-patient/:id', component: UpdatePatientComponent } 
+
+  {path:'docdash',component:DocdashComponent,canActivate:[DoctorauthguardService]},
+
+  {path:'create-patient',component:CreatePatientComponent,canActivate:[DoctorauthguardService]},
+
+  {path:'view-medicine',component:MedicinelistComponent, canActivate:[AdminauthguardService]},
+
+  {path:'create-medicine',component:CreateMedicineComponent, canActivate:[AdminauthguardService]},
+
+  {path: 'update-patient/:id', component: UpdatePatientComponent,canActivate:[AdminauthguardService]},
   
-  
+  {path:'update-medicine/:id',component:UpdateMedicineComponent,canActivate:[AdminauthguardService]},
+
+  { path: 'admin', component: AdmindComponent ,canActivate:[AdminauthguardService]},
+
+  {path:'doclogin',component:DocloginComponent},
+
+  {path:'adlogin',component:AdloginComponent},
+
 ]
 
 @NgModule({
+  
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

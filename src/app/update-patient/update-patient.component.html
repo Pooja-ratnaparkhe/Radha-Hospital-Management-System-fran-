@@ -1,25 +1,26 @@
 <div class="container">
+
     <form (ngSubmit)="onSubmit()">
 
         <h2 class="text-center">Update Patient</h2>
 
         <div class="form-group">
 
-            <label>name</label>
+            <label>Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your Name"class="form-control"[(ngModel)]="patient.name">
 
         </div>
 
         <div class="form-group">
 
-            <label>age</label>
+            <label>Age</label>
             <input type="text" id="age" name="age" placeholder="Enter your age"class="form-control"[(ngModel)]="patient.age">
 
         </div>
 
         <div class="form-group">
 
-            <label>blood</label>
+            <label>Blood</label>
             <input type="text" id="blood" name="blood" placeholder="Enter your blood"class="form-control"[(ngModel)]="patient.blood">
 
         </div>
@@ -33,21 +34,21 @@
 
         <div class="form-group">
 
-            <label>dose</label>
+            <label>Dose</label>
             <input type="text" id="dose" name="dose" placeholder="Enter your dose"class="form-control" [(ngModel)]="patient.dose">
 
         </div>
 
         <div class="form-group">
 
-            <label>fees</label>
+            <label>Fees</label>
             <input type="text" id="fees" name="fees" placeholder="Enter your fees"class="form-control"[(ngModel)]="patient.fees">
 
         </div>
 
         <div class="form-group">
 
-            <label>urgency</label>
+            <label>Urgency</label>
             <input type="text" id="urgency" name="urgency" placeholder="Enter your urgency"class="form-control"[(ngModel)]="patient.urgency">
 
         </div>
